@@ -11,6 +11,14 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    
+    public function recipes() {
+        return $this->hasMany(Recipe::class);  
+    }
+    
+    public function likes() {
+        return $this->hasMany(Like::class);  
+    }
 
     /**
      * The attributes that are mass assignable.

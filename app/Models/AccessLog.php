@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class AccessLog extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'recipe_id'
+    ];
+    
+    public function recipe() {
+        return $this->belongsTo(Recipe::class);
+    }
 }

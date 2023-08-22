@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'name'
+    ];
+    
+    public function recipes()
+    {
+        return $this->hasMany(Recipe::class);
+    }
+    
+    public function getTagName($id)
+    {
+        $tag = $this->select('name')->where('id', '=', $id)->first();
+        return $tag->name;
+    }
 }

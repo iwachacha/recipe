@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('tag_id')->constrained()->nullable();
+            $table->foreignId('tag_id')->nullable()->constrained();
             $table->text('image_name')->nullable();
             $table->string('category');
-            $table->string('quantity');
+            $table->string('amount');
             $table->string('cooking_level');
             $table->string('cooking_time');
             $table->string('title');

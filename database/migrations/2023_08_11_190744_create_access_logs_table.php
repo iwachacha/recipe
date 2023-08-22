@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('access_logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('recipe_id')->constrained();
+            $table->foreignId('recipe_id')->onDelete('cascade')->constrained();
             $table->timestamps();
         });
     }

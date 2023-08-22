@@ -1,3 +1,7 @@
+import * as Popper from '@popperjs/core'
+window.Popper = Popper
+import 'bootstrap'
+
 import _ from 'lodash';
 window._ = _;
 
